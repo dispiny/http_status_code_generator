@@ -2,6 +2,10 @@ from flask import Flask, request, Response
 
 app = Flask(__name__)
 
+@app.route('/health')
+def health():
+    return {"Healthy": "Up"}
+
 @app.route('/status')
 def get():
     code = request.args.get('code')
