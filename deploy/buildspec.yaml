@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - sudo dnf install -y python3-pip
+      - pip3 install -r requirements.txt
+  build:
+    commands:
+      - python3 -m py_compile main.py
+
+  post_build:
+    commands:
+      - echo "Build completed successfully."
